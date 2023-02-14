@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:quran_app/Screen/after_search.dart';
+import 'package:quran_app/Screen/home_screen.dart';
 
 class dataSearch extends SearchDelegate<String> {
   List _items = [];
@@ -111,7 +111,7 @@ class dataSearch extends SearchDelegate<String> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => After_Search(num_page: result.elementAt(index)['page']),
+                    builder: (context) => Home_Screen(controller: result.elementAt(index)['page']),
                   ),
                 );
               },
@@ -194,7 +194,7 @@ class dataSearch extends SearchDelegate<String> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => After_Search(num_page: suggestionList.elementAt(index)['page']),
+                  builder: (context) => Home_Screen(controller: suggestionList.elementAt(index)['page']-1),
                 ),
               );
             },

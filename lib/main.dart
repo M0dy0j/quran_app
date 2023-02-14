@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       title: 'QuranAPP',
-      home: Home_Screen(),
+      home: Home_Screen(controller: 0),
     );
   }
 }

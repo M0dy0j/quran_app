@@ -5,6 +5,9 @@ import 'package:quran_app/Screen/data_search.dart';
 
 
 class Home_Screen extends StatefulWidget {
+  final int controller ;
+  const Home_Screen({super.key,  required this.controller});
+
 
   @override
   _Home_ScreenState createState() {
@@ -13,6 +16,7 @@ class Home_Screen extends StatefulWidget {
 }
 
 class _Home_ScreenState extends State<Home_Screen> {
+
 
   List _items = [];
 
@@ -60,6 +64,8 @@ class _Home_ScreenState extends State<Home_Screen> {
       ),
       body: PageView.builder(
         reverse: true,
+        controller: PageController(initialPage: widget.controller),
+        itemCount: 604,
         itemBuilder: (BuildContext context, int index) {
           if (_items.isNotEmpty) {
             String byPage = '';
@@ -124,7 +130,6 @@ class _Home_ScreenState extends State<Home_Screen> {
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Stack(
-                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Align(
                         alignment: Alignment.topCenter,
